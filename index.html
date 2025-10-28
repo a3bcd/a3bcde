@@ -1,0 +1,87 @@
+<!doctype html>
+backdrop-filter: blur(8px);
+background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+border:1px solid rgba(0,0,0,0.05);
+border-radius:20px;
+padding:28px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+display:grid;
+grid-template-columns: 320px 1fr;
+gap:24px;
+}
+
+
+.profile{
+padding:20px;
+background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+border-radius:var(--radius);
+border:1px solid rgba(0,0,0,0.05);
+display:flex;
+flex-direction:column;
+gap:16px;
+align-items:center;
+text-align:center;
+}
+.avatar{
+width:140px;height:140px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;overflow:hidden;
+background:linear-gradient(135deg,#ff9a76,#ff7b54);
+border:4px solid rgba(255,255,255,0.7);
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{font-size:1.6rem;margin:0;color:#222;font-family:'Poppins','Noto Sans JP';}
+.role{color:var(--muted);font-weight:700;font-size:0.95rem}
+
+
+.contact a{display:flex;gap:8px;align-items:center;padding:10px;border-radius:12px;text-decoration:none;color:#333;background:var(--glass);border:1px solid rgba(0,0,0,0.05)}
+
+
+.main{padding:18px 10px;display:flex;flex-direction:column;gap:18px}
+
+
+.badge{background:var(--accent);color:#fff;padding:8px 12px;border-radius:999px;font-weight:700}
+
+
+.btn{padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#ff9a76);color:#fff;font-weight:800;border:none;cursor:pointer}
+
+
+.card{background:rgba(255,255,255,0.9);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.05);}
+
+
+.skill{padding:10px 12px;border-radius:10px;background:#ffe8d6;font-weight:700;color:#333}
+
+
+.project{padding:12px;border-radius:12px;background:#fff0e4;border:1px solid rgba(0,0,0,0.05)}
+
+
+.footer{color:var(--muted);font-size:0.9rem;display:flex;justify-content:space-between;align-items:center;padding-top:6px}
+
+
+@media (max-width:880px){
+.container{grid-template-columns:1fr; padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<aside class="profile">
+<div class="avatar"><img src="https://placehold.co/400x400?text=Photo" alt="プロフィール写真"></div>
+<h1>あなたの名前</h1>
+<div class="role">学生 / クリエイター</div>
+</aside>
+
+
+<section class="main">
+<div class="badge">新しい配色 &amp; フォント版</div>
+<p>フォントを <strong>Poppins</strong> と <strong>Noto Sans JP</strong> に変更し、暖かみのあるオレンジ系の配色にしました。背景も明るい雰囲気です。</p>
+<button class="btn">こんにちは！</button>
+<div class="footer">© <span id="year"></span> あなたの名前</div>
+</section>
+</div>
+
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
